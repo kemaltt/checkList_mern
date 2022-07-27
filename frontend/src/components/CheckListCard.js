@@ -17,8 +17,8 @@ export default function CheckListCard() {
   return (
     <div className="check_list_container">
       {data.map((item, i) => (
-        <div  key={i}>
-          <CheckListCardItem name={item.name} id={item.id} img={item.img} />
+        <div key={i}>
+          <CheckListCardItem thema={item.thema} id={item.id} img={item.img} />
         </div>
       ))}
     </div>

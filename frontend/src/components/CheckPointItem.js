@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const CheckPointItem = ({ title, id, checked, handleChecked }) => {
   const [checkedState, setCheckedState] = useState(checked);
-  //   console.log(checked);
+  console.log(id);
 
   return (
     <div className="check_list">

@@ -38,20 +38,57 @@ app.get("/detail/:id", (req, res) => {
   // res.json(checklist);
 });
 
-app.put("/checkedlist/:id", (req, res) => {
-  const { id } = req.body;
-  readJSONFile("./models/data.json").then((data) => {
-    const newData = data.map((item) => {
-      if (item.id === id) {
-        item.checked = !item.checked;
-      }
-      return item;
+app.put("/checkedlist/:listId/:checkPointId", (req, res) => {
+  const listId = req.params.listId;
+  const checkPointId = req.params.checkPointId;
+
+  readJSONFile("./models/data.json")
+    .then((data) => {
+      // const newCheckList = data.find((item) => item.id === listId);
+      // return newCheckList;
+      const newData = data.map((item) => {
+        console.log(item.id);
+        if (item.id === listId) {
+          item.checklist.map((checkPoint) => {
+            if (checkPoint.id === checkPointId) {
+              checkPoint.checked = !checkPoint.checked;
+            }
+            return checkPoint;
+          });
+        }
+        return item;
+      });
+      return newData;
+    })
+    // .then((newCheckList) => {
+    //   return newCheckList.checklist.find((item) => item.id === checkPointId);
+    // })
+    // .then((newCheckList) => {
+    //   newCheckList.checked = !newCheckList.checked;
+    //   return newCheckList;
+    //   console.log(newCheckList);
+    // })
+    .then((newCheckList) => {
+      writeJSONFile("./models/data.json", newCheckList).then(() => {
+        res.json(newCheckList);
+      });
     });
-    console.log(newData);
-    writeJSONFile("./models/data.json", newData).then(() => {
-      res.json(newData);
-    });
-  });
+
+  // res.json(newCheckList);
+  // const newData = data.map((item) => {
+  //   console.log(item.id);
+  //   if (item.id === id) {
+  //     item.checklist.map((checkPoint) => {
+  //       if (checkPoint.id === id) {
+  //         checkPoint.checked = !checkPoint.checked;
+  //       }
+  //       return checkPoint;
+  //     });
+  //     // item.checked = !item.checked;
+  //   }
+  //   return item;
+  // });
+  console.log(newData);
 });
 
 app.put("/reset", (req, res) => {
@@ -74,10 +111,10 @@ app.post("/dashboard", uploadFilesMiddleware, (req, res) => {
   console.log(req.body);
   console.log(req.file);
   const newList = {
-    title: req.body.title,
-    name: req.body.name,
+    thema: req.body.thema,
+    // name: req.body.name,
     img: req.file.filename,
-    checked: false,
+    // checked: false,
     id: uuid(),
   };
   console.log(newList);

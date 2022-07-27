@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function NewList() {
-  const [inputTitle, setInputTitle] = useState("");
+  const [inputThema, setInputThema] = useState("");
   const [inputName, setInputName] = useState("");
   const [img, setImg] = useState(null);
   const navigate = useNavigate();
@@ -13,8 +13,8 @@ export default function NewList() {
     const formData = new FormData();
 
     // Update the formData object
-    formData.append("title", inputTitle);
-    formData.append("name", inputName);
+    formData.append("thema", inputThema);
+    // formData.append("name", inputName);
     formData.append("img", img, img.name); // Blob = Binary Large Object
 
     fetch("http://localhost:9000/dashboard", {
@@ -23,7 +23,7 @@ export default function NewList() {
     })
       .then((res) => res.json())
       .then(() => {
-        setInputTitle("");
+        setInputThema("");
         setInputName("");
         setImg(null);
         navigate("/");
@@ -50,22 +50,22 @@ export default function NewList() {
     <div className="new_list">
       <h3>Create a new checklist</h3>
       <form>
-        {/* <div>
-          <input
-            onChange={(e) => setInputTitle(e.target.value)}
-            value={inputTitle}
-            type="text"
-            placeholder="new title"
-          />
-        </div> */}
         <div>
+          <input
+            onChange={(e) => setInputThema(e.target.value)}
+            value={inputThema}
+            type="text"
+            placeholder="new thema"
+          />
+        </div>
+        {/* <div>
           <input
             onChange={(e) => setInputName(e.target.value)}
             value={inputName}
             type="text"
             placeholder="new title"
           />
-        </div>
+        </div> */}
         <div>
           <input
             type="file"

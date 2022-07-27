@@ -14,18 +14,14 @@ export default function CheckPoint() {
   //     .then((data) => setData(data));
   // };
 
-  const handleChecked = (id) => {
-    fetch(`http://localhost:9000/checkedlist/${id}`, {
+  const handleChecked = (_id) => {
+    fetch(`http://localhost:9000/checkedlist/${id}/${_id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        id: id,
-      }),
-    })
-      .then((res) => res.json())
-      .then((newData) => setData(newData));
+    }).then((res) => res.json());
+    // .then((newData) => setData(newData));
   };
 
   const handleReset = () => {
@@ -45,6 +41,7 @@ export default function CheckPoint() {
       .then((data) => {
         console.log(data);
         setData(data.checklist);
+        // setData(data);
       });
   }, [id]);
   // useEffect(() => {
@@ -52,20 +49,27 @@ export default function CheckPoint() {
   // }, []);
   console.log(data);
 
-  return (
-    <div className="dashboard_container">
-      {data.map((el, i) => (
-        <div key={i}>
-          <CheckPointItem
-            title={el.title}
-            id={el.id}
-            checked={el.checked}
-            handleChecked={handleChecked}
-          />
-        </div>
-      ))}
-    </div>
-  );
+  if (data) {
+    return (
+      <div className="dashboard_container">
+        {/* <h2>{data.thema}</h2> */}
+        {data.map((el, i) => (
+          <div key={i}>
+            <CheckPointItem
+              title={el.title}
+              id={el.id}
+              checked={el.checked}
+              handleChecked={handleChecked}
+              checklist={el.checklist}
+            />
+          </div>
+        ))}
+        <button onClick={handleReset}>Reset</button>
+      </div>
+    );
+  } else {
+    return <div>Loading...</div>;
+  }
 }
 
 {
