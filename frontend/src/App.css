@@ -1,0 +1,63 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(24, 24, 228);
+  color: #fff;
+  padding: 4vh 4%;
+}
+nav ul{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  gap: 10px;
+}
+
+nav a{
+  color: #fff;
+  text-decoration: none;
+
+
+  
+}
+nav a:hover{
+  border-bottom: 1px solid #fff;  
+}
+
+.check_list_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 4vh 4%;
+}
+.check_list_card{
+  text-align: center;
+  /* border: solid 1px gray; */
+  background-color: #eee;
+}
+.check_list_card h4{
+  padding: 1vh 0;
+
+}
+.check_list_card button{
+  padding: 5px;
+  background-color: red;
+  border: none;
+  color: #fff;
+}
+
+.new_list{
+  width: 50%;
+  margin: 5vh auto;
+  padding: 4vh 4%;
+  
+}
+
