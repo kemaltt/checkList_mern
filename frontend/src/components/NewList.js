@@ -22,12 +22,11 @@ export default function NewList() {
       body: formData,
     })
       .then((res) => res.json())
-      .then(() => {
-        setInputThema("");
-        setInputName("");
-        setImg(null);
-        navigate("/");
-      });
+      .then(() => {});
+    setInputThema("");
+    setInputName("");
+    setImg(null);
+    navigate("/");
   };
 
   // const handleInput = (e) => {

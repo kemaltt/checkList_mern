@@ -5,11 +5,11 @@ export default function () {
   const navigate = useNavigate();
   return (
     <nav>
-      <h1>Checklist</h1>
+      <h1>Checklist App</h1>
       <ul>
         <li>
           <a onClick={() => navigate("/")} href="">
-            Dashboard
+            Home
           </a>
         </li>
         <li>

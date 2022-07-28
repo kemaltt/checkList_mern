@@ -38,9 +38,9 @@ nav a:hover{
   gap: 20px;
   padding: 4vh 4%;
 }
-/* .check_list_container div{
-  width: 70%;
-} */
+.check_list_container div{
+  width: 400px;
+}
 .check_list_card{
 
   text-align: center;
