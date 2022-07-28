@@ -7,7 +7,7 @@ nav{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(24, 24, 228);
+  background-color: green;
   color: #fff;
   padding: 4vh 4%;
 }
@@ -42,23 +42,26 @@ nav a:hover{
   text-align: center;
   /* border: solid 1px gray; */
   background-color: #eee;
+  
+}
+.check_list_card img{
+ width: 100%;
+ height: 400px;
 }
 .check_list_card h4{
   padding: 1vh 0;
 
 }
-.check_list_card button{
+ button{
   padding: 5px;
-  background-color: red;
+  background-color:gray;
   border: none;
   color: #fff;
 }
-.check_list{
- 
-}
+
 .dashboard_container{
   width: 50%;
-  margin: 0 auto;
+  margin: 5vh auto;
 }
 
 .new_list{
@@ -66,5 +69,13 @@ nav a:hover{
   margin: 5vh auto;
   padding: 4vh 4%;
   
+}
+
+form{
+  line-height: 30px;
+}
+
+form input{
+  padding: 5px;
 }
 

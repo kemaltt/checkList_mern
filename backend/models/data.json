@@ -1,8 +1,8 @@
 [
     {
-        "thema": "Wandern",
-        "img": "a70334693a5564609aa6b76f9af94f05",
-        "id": "44be8366-43d5-4bdc-93a6-e53af7e7930f"
+        "thema": "Urlaub",
+        "img": "214edd6e620be05f55cd16fb9dc48ed3",
+        "id": "10c67160-faa2-4d20-90b8-48112d0bc643"
     },
     {
         "thema": "Reise",
@@ -12,7 +12,7 @@
             {
                 "title": "ticket kaufen",
                 "id": "1",
-                "checked": true
+                "checked": false
             },
             {
                 "title": " einkaufen gehen",
@@ -24,7 +24,8 @@
                 "id": "3",
                 "checked": false
             }
-        ]
+        ],
+        "checked": false
     },
     {
         "thema": "Arbeit",
@@ -36,7 +37,8 @@
                 "id": "4",
                 "checked": true
             }
-        ]
+        ],
+        "checked": false
     },
     {
         "thema": "Kinder",
@@ -48,6 +50,7 @@
                 "id": "5",
                 "checked": true
             }
-        ]
+        ],
+        "checked": false
     }
 ]
